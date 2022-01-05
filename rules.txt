@@ -1,0 +1,9 @@
+                                                                                               fanbola rules
+
+1. press k to get the first question and press n to get the next questions and similarily thereafter press a to get the answer of the current question.
+2. first row- to be pressed when the all the number of first row have been done by a participant.
+3.second row- to be pressed when the all the number of first row have been done by a participant.
+4.third row- to be pressed when the all the number of first row have been done by a participant.
+5.Breakfast- to be pressed when the all the number of first 3 columns have been done by a participant.
+6.Lunch- to be pressed when the all the number of middle 3 columns have been done by a participant.
+7.Dinner- to be pressed when the all the number of last 3 colmns have been done by a participant.

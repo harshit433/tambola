@@ -1,0 +1,449 @@
+import time
+import random
+import re
+import tkinter as tk
+root=tk.Tk()
+logo3= tk.PhotoImage(file="tambola.png")
+scrollbar = tk.Scrollbar(root,bg="black")
+scrollbar.pack(side="right", fill="y")
+SScrollbar = tk.Scrollbar(root)
+SScrollbar.pack(side="bottom", fill="x")
+frame=tk.Frame(root,bg="navy",width=200)
+frame.pack()
+logo = tk.PhotoImage(file="label_with_image.png")
+def o137():
+    w136=tk.Label(root,text="submitted",justify="center")
+    w136.pack()
+    w136.destroy()
+w134=tk.Label(root,text="enter the question file",justify="center",font=["chiller",30,"bold"],bg="light blue")
+w134.pack()
+e10=tk.Entry(root,justify="center",font=["mangal",15,"bold"],bg="cyan",width=22)
+e10.pack()
+w135=tk.Label(root,text="enter the answer file",justify="center",font=["chiller",30,"bold"],bg="light blue")
+w135.pack()
+e11=tk.Entry(root,justify="center",font=["mangal",15,"bold"],bg="cyan",width=22)
+e11.pack()
+but=tk.Button(root,text="submit",command=o137,justify="center",font=["chiller",20,"bold"],activebackground="red",width=10,bg="light blue")
+but.pack()
+w1051 = tk.Label(root,image=logo,text="python",compound="top",justify="left")
+w1051.pack(side="right")
+w1052 = tk.Label(root,image=logo,text="python",compound="top")
+w1052.pack(side="left")
+z=[]
+x=[]
+n=[]
+m=["breakfast","lunch","dinner","first row","second row","bottom row","corners"]
+k=0
+    
+def o3():
+    m.remove("breakfast")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack()
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        d=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                d+=1
+        if d <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z,justify="top")
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="right")
+    
+def o4():
+    m.remove("lunch")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        c=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                c+=1
+        if c <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+
+def o5():
+    m.remove("dinner")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        t=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                t+=1
+        if t <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+def o6():
+    m.remove("first row")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        y=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                y+=1
+        if y <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+def o7():
+    m.remove("second row")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        u=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                u+=1
+        if u <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+def o8():
+    m.remove("bottom row")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        o=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                o+=1
+        if o <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+def o9():
+    m.remove("corners")
+    root1=tk.Tk()
+    frame1=tk.Frame(root1)
+    frame1.pack()
+    w37=tk.Label(root1,text="enter the no.s seperated with space")
+    w37.pack(side="top")
+    e=tk.Entry(root1)
+    e.pack()
+    e.focus_set()
+    def quite():
+        root1.destroy()
+    e1=e.get().split()
+    vte=tk.Button(frame1,text="quit",
+                  command=quite)
+    vte.pack(side="right")
+    def value():
+        e1=e.get().split()
+        print(e1)
+        print(z)
+        g=0
+        for i in range(0,len(e1)):
+            q=(e1[i])
+            x.append(q)
+            if q in z:
+                g+=1
+        if g <= len(x):
+            w85=tk.Label(root1,text="okay")
+            w85.pack()
+        else:
+            w86=tk.Label(root1,text="value is missing \n Check from these")
+            w86.pack()
+            w87=tk.Label(root1,text=z)
+            w87.pack()
+    vt=tk.Button(frame1,text="check",command=value)
+    vt.pack(side="left")
+
+
+
+def o12():
+    fn=e10.get()
+    file=fn+".txt"
+    f=open(file,"r")
+    lines=list(f)
+    e10.destroy()
+    fn1=e11.get()
+    file1=fn1+".txt"
+    v=open(file1,"r")
+    lines1=list(v)
+    e11.destroy()
+    w134.destroy()
+    w135.destroy()
+    but.destroy()
+    l=list(range(1,len(lines)+1))
+    print(len(l))
+    listbox=tk.Listbox(root,width=90,height=50,bg="navy",font=["Times New Roman",20,"italic"],fg="orange")
+    listbox.pack()
+    listbox.config(yscrollcommand=scrollbar.set)
+    scrollbar.config(command=listbox.yview)
+    listbox.config(xscrollcommand=SScrollbar.set)
+    SScrollbar.config(command=listbox.xview)
+    def o2():
+        
+        a=random.choice(l)
+        l.remove(a)
+        n.append(a)
+        listbox.insert("end",lines[a])
+        c=n[-1]
+        p=re.sub("\n","",lines1[c])
+        z.append(p)
+    def o11():
+        b=n[-1]
+        listbox.insert("end","answer is ",lines1[b])
+    def o10():
+        k=var.get()
+        if k==1:
+            listbox.insert("end",m)
+        else:
+            pass
+    def o100():
+        listbox.insert("end",z)
+    def o1000():
+        root.destroy()
+    button=tk.Button(frame,text="Click to start",fg="red",width=14,bg="cyan",bd=0,font=["times newroman",17,"bold"],
+                      command=o2)
+    button.pack(side="top")
+
+    button1=tk.Button(frame,
+                      text="Next",width=14,
+                      fg="magenta",
+                      bg="cyan",bd=0,
+                      font=["times new roman",17,"bold"],
+                      command=o2)
+    button1.pack(side="top")
+    button10=tk.Button(frame,
+                       text="answer",
+                       fg="red",
+                       bg="cyan",bd=0,width=14,
+                       font=["times new roman",17,"bold"],
+                       command=o11)
+    button10.pack(side="top")
+    button100=tk.Button(frame,
+                       text="View No.s",
+                       fg="red",
+                       bg="cyan",bd=0,width=14,
+                       font=["times new roman",17,"bold"],
+                       command=o100)
+    button100.pack(side="top")
+    button1000=tk.Button(frame,
+                       text="Exit",
+                       fg="red",
+                       bg="cyan",bd=0,width=14,
+                       font=["times new roman",17,"bold"],
+                       command=o1000)
+    button1000.pack(side="top")
+    
+    button2=tk.Button(frame,
+                      text="breakfast",
+                      fg="green",
+                      bg="black",bd=0,width=9,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o3)
+    button2.pack(side="right")
+    button3=tk.Button(frame,
+                      text="lunch",
+                      fg="green",
+                      bg="black",bd=0,width=9,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o4)
+    button3.pack(side="right")
+    button4=tk.Button(frame,
+                      text="dinner",
+                      fg="green",
+                      bg="black",bd=0,
+                      activebackground="orange",width=8,
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o5)
+    button4.pack(side="right")
+    button5=tk.Button(frame,
+                      text="first row",
+                      fg="green",
+                      bg="black",bd=0,width=9,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o6)
+    button5.pack(side="left")
+    button6=tk.Button(frame,
+                      text="second row",
+                      fg="green",bd=0,
+                      bg="black",width=11,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o7)
+    button6.pack(side="left")
+    button7=tk.Button(frame,
+                      text="bottom row",
+                      fg="green",bd=0,
+                      bg="black",width=11,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o8)
+    button7.pack(side="left")
+    button8=tk.Button(frame,
+                      text="corners",
+                      fg="green",width=8,
+                      bg="black",bd=0,
+                      activebackground="orange",
+                      activeforeground="black",
+                      font=["times new roman",17,"bold"],
+                      command=o9)
+    button8.pack(side="left")
+    var=tk.IntVar()
+    button9=tk.Checkbutton(frame,
+                      text="remaining positions",
+                      fg="green",
+                      bg="black",bd=0,
+                        activebackground="orange",
+                      activeforeground="black",height=1,
+                      font=["times new roman",17,"bold"],
+                        command=o10,
+                        onvalue=1,
+                        offvalue=0,
+                        variable=var)
+    button9.pack(side="left")
+butt=tk.Button(frame,
+               text="WELCOME TO FUNBOLA",
+               image=logo3,
+               compound="left",
+               fg="yellow",
+               bg="teal",bd=0,
+               font=["Times New Roman",40,"bold","italic","underline"],
+               command=o12)
+butt.pack(side="top")
+tk.mainloop()
